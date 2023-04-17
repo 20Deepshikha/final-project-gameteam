@@ -7,4 +7,5 @@ We are planning to build a car/bike (TBD) race game. Basically, there will be ro
 
 #### Resources (Assets Links)
 * https://kenney.nl/assets/pixel-vehicle-pack 
+* https://kenney.nl/assets/road-textures
 * https://kenney.nl/assets/isometric-roads 
