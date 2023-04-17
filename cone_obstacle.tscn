@@ -20,6 +20,7 @@ animations = [ {
 radius = 22.0907
 
 [node name="cone_obstacle" type="Area2D"]
+collision_layer = 4
 __meta__ = {
 "_edit_group_": true
 }
