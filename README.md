@@ -2,7 +2,15 @@
 
 ## Car Race
 ### Description
-We are planning to build a car/bike (TBD) race game. Basically, there will be road with multiple lanes and there will have different kind of obstacles. The vehicle will race through the road with increasing speed and the player will be responsible for taking the vehicle to the maximum distance possible without hitting the obstacles. There will be different levels to the game but it will be a continous level without break (so far).
+This is a car race game in which the player will be responsible for taking the vehicle through the road with increasing speed while avoiding different kinds of obstacles. The game will have different levels but it will be continuous without any breaks. Pedestrians will also randomly appear on the road, increasing the difficulty of the game.
+<hr>
+
+#### Features
+* Increasing speed and difficulty
+* Different levels
+* Obstacles and pedestrians to avoid
+* Pixel art graphics with assets from Kenney.nl
+* Appropriate sound affects
 <hr>
 
 #### Resources (Assets Links)
