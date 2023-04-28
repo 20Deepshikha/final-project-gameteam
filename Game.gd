@@ -1,5 +1,5 @@
 extends Node2D
-
+var score: int
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -55,7 +55,7 @@ func game_over():
 
 	# Pause the game and disable the player's movement
 	get_tree().paused = true
-	player.get_node("Movement").set_process(false)
+	#player.get_node("Movement").set_process(false)
 	
 
 
