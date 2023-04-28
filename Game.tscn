@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Road.tscn" type="PackedScene" id=1]
 [ext_resource path="res://car.tscn" type="PackedScene" id=2]
 [ext_resource path="res://cone_obstacle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 41, 1346.5 )
@@ -27,6 +29,7 @@ extents = Vector2( 609, 266.5 )
 
 [node name="Game" type="Node2D"]
 position = Vector2( 0, -1 )
+script = ExtResource( 5 )
 
 [node name="Road" parent="." instance=ExtResource( 1 )]
 cell_size = Vector2( 32, 64 )
@@ -109,6 +112,8 @@ shape = SubResource( 6 )
 position = Vector2( 288, -5095 )
 shape = SubResource( 7 )
 
-[connection signal="body_entered" from="Area2D" to="car" method="when_touches_side_of_road"]
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+
 [connection signal="body_entered" from="Area2D" to="car" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="car" method="when_touches_side_of_road"]
 [connection signal="body_entered" from="Area2D2" to="car" method="on_car_reaches_end"]
