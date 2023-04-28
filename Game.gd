@@ -33,6 +33,7 @@ func new_game():
 
 func _on_HUD_start_game():
 	# Start the game by setting the player's position and resetting the score
+	$Scoretimer.start()
 	$car.position = Vector2(230, 700)
 	score = 0
 	

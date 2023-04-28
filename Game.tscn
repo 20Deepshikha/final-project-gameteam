@@ -115,7 +115,6 @@ shape = SubResource( 7 )
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [node name="Scoretimer" type="Timer" parent="."]
-autostart = true
 
 [connection signal="touch_the_wall" from="car" to="." method="_on_car_touch_the_wall"]
 [connection signal="body_entered" from="Area2D2" to="car" method="on_car_reaches_end"]
