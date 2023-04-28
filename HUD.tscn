@@ -32,10 +32,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -100.0
-margin_top = -70.5
-margin_right = 100.0
-margin_bottom = 70.5
+margin_left = -99.0
+margin_top = -68.0
+margin_right = 101.0
+margin_bottom = 73.0
 custom_fonts/font = SubResource( 2 )
 text = "DRIFT LEGENDS!!!"
 align = 1
@@ -56,6 +56,19 @@ text = "START"
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Instructions" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 1.0
+margin_top = -153.0
+margin_right = 1.0
+margin_bottom = -108.0
+custom_fonts/font = SubResource( 2 )
+text = "Instructions"
+align = 1
+autowrap = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]

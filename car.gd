@@ -1,4 +1,5 @@
 extends KinematicBody2D
+signal touch_the_wall
 
 var accel = 5000
 var max_speed = 100000
@@ -39,6 +40,7 @@ func when_touches_side_of_road(body: PhysicsBody2D) -> void:
 	if body.name == "car":
 		# Stop the car's velocity
 		velocity = Vector2.ZERO
+	emit_signal("touch_the_wall")
 
 
 func on_car_reaches_end(body: PhysicsBody2D) -> void:
