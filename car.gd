@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 var accel = 5000
 var max_speed = 100000
 var turbo_speed = 1000000
@@ -17,20 +16,18 @@ func _ready():
 
 func _process(delta):
 	#speed and break
-	if(Input.is_action_pressed("ui_up")):
-		velocity.y = move_toward(velocity.y, -turbo_speed, turbo_accel * delta)
-	elif(Input.is_action_pressed("ui_up")):
-		velocity.y = move_toward(velocity.y, -max_speed, accel * delta)
-	elif(Input.is_action_pressed("ui_down")):
-		velocity.y = move_toward(velocity.y, 0, deaccel * delta)
+	if Input.is_action_pressed("ui_up"):
+		velocity = velocity.move_toward(Vector2(0, -max_speed).rotated(rotation), accel * delta)
+	elif velocity.length_squared() > 0:
+		velocity = velocity.move_toward(Vector2.ZERO, deaccel * delta)
 	else:
-		velocity.y = move_toward(velocity.y, 0, friction * delta)
-	
+		velocity = Vector2.ZERO
+		
 	# Rotation of car
 	if Input.is_action_pressed("ui_left"):
 		rotation -= ROTATION_SPEED * delta
-	elif(Input.is_action_pressed("ui_right")):
+	elif Input.is_action_pressed("ui_right"):
 		rotation += ROTATION_SPEED * delta
-		
+	
 	var motion = velocity * delta
 	move_and_slide(motion)
