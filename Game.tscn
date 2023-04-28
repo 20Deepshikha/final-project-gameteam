@@ -115,3 +115,4 @@ shape = SubResource( 7 )
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [connection signal="body_entered" from="Area2D2" to="car" method="on_car_reaches_end"]
+[connection signal="start_game" from="HUD" to="." method="_on_HUD_start_game"]
