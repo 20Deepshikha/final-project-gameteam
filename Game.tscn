@@ -22,8 +22,12 @@ extents = Vector2( 60.75, 1184 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 756.5, 65.25 )
 
+<<<<<<< Updated upstream
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 609, 266.5 )
+=======
+[sub_resource type="DynamicFont" id=7]
+>>>>>>> Stashed changes
 
 [node name="Game" type="Node2D"]
 position = Vector2( 0, -1 )
@@ -75,6 +79,7 @@ polygon = PoolVector2Array( 432, -3319, 440, -5279, 512, -5279, 528, -3415, 2000
 position = Vector2( 1208, -1413.75 )
 shape = SubResource( 6 )
 
+<<<<<<< Updated upstream
 [node name="CollisionPolygon2D3" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 1, -511 )
 shape = SubResource( 1 )
@@ -111,3 +116,24 @@ shape = SubResource( 7 )
 
 [connection signal="body_entered" from="Area2D" to="car" method="when_touches_side_of_road"]
 [connection signal="body_entered" from="Area2D2" to="car" method="on_car_reaches_end"]
+=======
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 7 )
+
+[node name="Message" type="Label" parent="HUD"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "1111"
+
+[node name="StartButton" type="Button" parent="HUD"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="MessageTimer" type="Timer" parent="HUD"]
+
+[connection signal="body_entered" from="Area2D" to="car" method="_on_Area2D_body_entered"]
+>>>>>>> Stashed changes
