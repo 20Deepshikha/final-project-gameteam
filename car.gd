@@ -31,3 +31,12 @@ func _process(delta):
 	
 	var motion = velocity * delta
 	move_and_slide(motion)
+
+
+func _on_Area2D_body_entered(body: PhysicsBody2D) -> void:
+	print(body.name)
+	if body.name == "car":
+		# Stop the car's velocity
+		velocity = Vector2.ZERO
+	
+	
