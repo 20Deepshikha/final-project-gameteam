@@ -33,10 +33,16 @@ func _process(delta):
 	move_and_slide(motion)
 
 
-func _on_Area2D_body_entered(body: PhysicsBody2D) -> void:
+
+func when_touches_side_of_road(body: PhysicsBody2D) -> void:
 	print(body.name)
 	if body.name == "car":
 		# Stop the car's velocity
 		velocity = Vector2.ZERO
-	
-	
+
+
+func on_car_reaches_end(body: PhysicsBody2D) -> void:
+	print(body.name)
+	if body.name == "car":
+		var new_position = Vector2(body.global_position.x, 400) # Change this to your desired position
+		body.set_global_position(new_position)
