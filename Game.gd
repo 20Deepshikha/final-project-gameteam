@@ -49,14 +49,6 @@ func add_score(points : int):
 	# Update the score label in the HUD
 	get_node("HUD/ScoreLabel").text = "Score: " + str(score)
 
-func game_over():
-	# Show the game over screen and the final score
-	get_node("GameOverScreen/ScoreLabel").text = "Final Score: " + str(score)
-	get_node("GameOverScreen").show()
-
-	# Pause the game and disable the player's movement
-	get_tree().paused = true
-	#player.get_node("Movement").set_process(false)
 	
 
 
@@ -69,3 +61,13 @@ func _on_Scoretimer_timeout():
 func _on_car_touch_the_wall():
 	score -= 5
 	get_node("HUD/ScoreLabel").text = str(score)
+
+
+func _on_car_game_over():
+	print("aaaa")
+	get_tree().quit()
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == "car":
+		get_tree().quit()

@@ -1,6 +1,7 @@
 extends CanvasLayer
 signal start_game
 
+
 var coins = 0
 
 #func _ready():
@@ -13,6 +14,8 @@ func _physics_process(delta):
 func _on_coin_collected():
 	coins = coins + 1
 	_ready()
+
+
 
 func show_message(text):
 	$Message.text = text
@@ -37,6 +40,8 @@ func update_Highscore(Highscore):
 	
 func _on_StartButton_pressed():
 	$StartButton.hide()
+	$Message.hide()
+	$Instructions.hide()
 	emit_signal("start_game")
 	
 func _on_MessageTimer_timeout():
