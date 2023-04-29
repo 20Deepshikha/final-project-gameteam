@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Road.tscn" type="PackedScene" id=1]
 [ext_resource path="res://car.tscn" type="PackedScene" id=2]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game.gd" type="Script" id=5]
 [ext_resource path="res://assets/Chiptronical.ogg" type="AudioStream" id=6]
+[ext_resource path="res://coin.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 41, 1346.5 )
@@ -119,7 +120,50 @@ shape = SubResource( 7 )
 stream = ExtResource( 6 )
 autoplay = true
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 152, 122 )
+
+[node name="coin1" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 83, 230 )
+
+[node name="coin2" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( -18, -301 )
+
+[node name="coin3" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 213, -852 )
+
+[node name="coin4" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 72, -1406 )
+
+[node name="coin5" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 639, -1602 )
+
+[node name="coin6" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 1566, -1583 )
+
+[node name="coin7" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 1577, -2382 )
+
+[node name="coin8" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 1568, -3081 )
+
+[node name="coin9" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 95, -3076 )
+
+[node name="coin10" parent="Node2D" instance=ExtResource( 7 )]
+position = Vector2( 100, -4717 )
+
 [connection signal="touch_the_wall" from="car" to="." method="_on_car_touch_the_wall"]
 [connection signal="body_entered" from="Area2D2" to="car" method="on_car_reaches_end"]
 [connection signal="start_game" from="HUD" to="." method="_on_HUD_start_game"]
 [connection signal="timeout" from="Scoretimer" to="." method="_on_Scoretimer_timeout"]
+[connection signal="coin_collected" from="Node2D/coin1" to="HUD" method="_on_coin_coin_collected"]
+[connection signal="coin_collected" from="Node2D/coin2" to="HUD" method="_on_coin_coin_collected"]
+[connection signal="coin_collected" from="Node2D/coin3" to="HUD" method="_on_coin_coin_collected"]
+[connection signal="coin_collected" from="Node2D/coin4" to="HUD" method="_on_coin_coin_collected"]
+[connection signal="coin_collected" from="Node2D/coin5" to="HUD" method="_on_coin_coin_collected"]
+[connection signal="coin_collected" from="Node2D/coin6" to="HUD" method="_on_coin_coin_collected"]
+[connection signal="coin_collected" from="Node2D/coin7" to="HUD" method="_on_coin_coin_collected"]
+[connection signal="coin_collected" from="Node2D/coin8" to="HUD" method="_on_coin_coin_collected"]
+[connection signal="coin_collected" from="Node2D/coin9" to="HUD" method="_on_coin_coin_collected"]
+[connection signal="coin_collected" from="Node2D/coin10" to="HUD" method="_on_coin_coin_collected"]
